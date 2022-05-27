@@ -39,6 +39,7 @@ export class ProductManager {
             throw new Error('update error')
         }
     }
+
     findBook(id: number) {
         let i = -1;
         this.products.forEach((product,  index) => {
@@ -48,6 +49,7 @@ export class ProductManager {
         })
         return i;
     }
+
     search(id:number) {
         let indexOfSearch = this.findBook(id);
         for (let i = 0;i < this.products.length;i++) {
