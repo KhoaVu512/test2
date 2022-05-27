@@ -14,8 +14,11 @@ productManager.add(product3);
 productManager.add(product4);
 productManager.add(product5);
 console.table(productManager.showList());
+// update
 productManager.update(3, 'xiaomi m1', 'dien thoai', 20000000, 4, '23/2/2021', 'dien thoai cam tay');
 console.table(productManager.showList());
+// search
+console.table(productManager.search(4));
+// Xoa
 productManager["delete"](2);
 console.table(productManager.showList());
-console.table(productManager.search(3));

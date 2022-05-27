@@ -47,7 +47,6 @@ var ProductManager = /** @class */ (function () {
         var indexOfSearch = this.findBook(id);
         for (var i = 0; i < this.products.length; i++) {
             if (indexOfSearch === this.products[i].getId()) {
-                return this.products[indexOfSearch];
             }
             return this.products[indexOfSearch];
         }

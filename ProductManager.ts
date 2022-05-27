@@ -52,7 +52,6 @@ export class ProductManager {
         let indexOfSearch = this.findBook(id);
         for (let i = 0;i < this.products.length;i++) {
             if (indexOfSearch === this.products[i].getId())  {
-                return this.products[indexOfSearch]
             }
             return this.products[indexOfSearch]
         }
