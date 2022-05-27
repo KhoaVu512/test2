@@ -12,7 +12,7 @@ var ProductManager = /** @class */ (function () {
         return this.products;
     };
     ProductManager.prototype["delete"] = function (id) {
-        var indexOfDelete = this.findBook(id);
+        var indexOfDelete = this.findProduct(id);
         if (indexOfDelete !== -1) {
             this.products.splice(indexOfDelete, 1);
         }
@@ -21,7 +21,7 @@ var ProductManager = /** @class */ (function () {
         }
     };
     ProductManager.prototype.update = function (id, name, category, price, number, date, properties) {
-        var indexOfUpdate = this.findBook(id);
+        var indexOfUpdate = this.findProduct(id);
         if (indexOfUpdate !== -1) {
             this.products[indexOfUpdate].setName(name);
             this.products[indexOfUpdate].setCategory(category);
@@ -34,7 +34,7 @@ var ProductManager = /** @class */ (function () {
             throw new Error('update error');
         }
     };
-    ProductManager.prototype.findBook = function (id) {
+    ProductManager.prototype.findProduct = function (id) {
         var i = -1;
         this.products.forEach(function (product, index) {
             if (product.getId() === id) {
@@ -44,7 +44,7 @@ var ProductManager = /** @class */ (function () {
         return i;
     };
     ProductManager.prototype.search = function (id) {
-        var indexOfSearch = this.findBook(id);
+        var indexOfSearch = this.findProduct(id);
         for (var i = 0; i < this.products.length; i++) {
             if (indexOfSearch === this.products[i].getId()) {
             }

@@ -11,7 +11,7 @@ export class ProductManager {
         return this.products
     }
     delete(id:number) {
-        let indexOfDelete = this.findBook(id);
+        let indexOfDelete = this.findProduct(id);
             if (indexOfDelete !== -1) {
                 this.products.splice(indexOfDelete,1)
             } else {
@@ -27,8 +27,8 @@ export class ProductManager {
            number: number,
            date: string,
            properties: string) {
-        let indexOfUpdate = this.findBook(id);
-        if (indexOfUpdate !== -1) {
+        let indexOfUpdate = this.findProduct(id);
+        if (indexOfUpdate !== -1 ) {
             this.products[indexOfUpdate].setName(name);
             this.products[indexOfUpdate].setCategory(category);
             this.products[indexOfUpdate].setPrice(price);
@@ -40,7 +40,7 @@ export class ProductManager {
         }
     }
 
-    findBook(id: number) {
+    findProduct(id: number) {
         let i = -1;
         this.products.forEach((product,  index) => {
             if (product.getId() === id) {
@@ -51,12 +51,11 @@ export class ProductManager {
     }
 
     search(id:number) {
-        let indexOfSearch = this.findBook(id);
+        let indexOfSearch = this.findProduct(id);
         for (let i = 0;i < this.products.length;i++) {
             if (indexOfSearch === this.products[i].getId())  {
             }
             return this.products[indexOfSearch]
         }
-
     }
 }
